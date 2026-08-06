@@ -31,8 +31,6 @@ properties:
   GRAYLOG_MONGODB_URI: mongodb://mongodb-3-1:27017/graylog
   GRAYLOG_ELASTICSEARCH_HOSTS: http://elasticsearch-3-1:9200/
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED: false
-  GRAYLOG_ROOT_PASSWORD: 
-    vault: ADMIN_PASSWORD
   GRAYLOG_HTTP_BIND_ADDRESS: 0.0.0.0:9000
   GRAYLOG_HTTP_EXTERNAL_URI: https://gl-qa.lowtouchcloud.io/
   revision: 1
