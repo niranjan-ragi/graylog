@@ -1,0 +1,35 @@
+app:
+  name: AppZ-LogCollectorGL
+  code: LCGL
+  notify: appz@cloudbourne.co
+
+build:
+  version: 3.1
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: graylog-3.1
+
+deploy:
+  context: niranjan-ragi/DEV
+  replicas: 1
+  type: statefulset
+  port:
+    - 9000
+    - 12201
+
+volumes:
+  - claim: graylog-data
+    class: microk8s-hostpath
+    mode: ReadWriteOnce
+    mount: /usr/share/graylog/data/journal
+    name: graylog-data
+    size: 10Gi
+
+
+properties:
+  revision: 25
+  GRAYLOG_MONGODB_URI: mongodb://mongodb-3-1:27017/graylog
+  GRAYLOG_ELASTICSEARCH_HOSTS: http://elasticsearch-3-1:9200/
+  GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED: false
+  GRAYLOG_ROOT_PASSWORD_SHA2: 6541dec67401cc487c928fb21fb022766f414b92758aa9d7a485b280974ea85d
