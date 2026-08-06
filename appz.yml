@@ -28,8 +28,8 @@ volumes:
 
 
 properties:
-  revision: 25
   GRAYLOG_MONGODB_URI: mongodb://mongodb-3-1:27017/graylog
   GRAYLOG_ELASTICSEARCH_HOSTS: http://elasticsearch-3-1:9200/
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED: false
   GRAYLOG_ROOT_PASSWORD_SHA2: 6541dec67401cc487c928fb21fb022766f414b92758aa9d7a485b280974ea85d
+  revision: 1
